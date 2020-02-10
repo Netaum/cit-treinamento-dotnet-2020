@@ -9,8 +9,67 @@ Mas desistir não é uma opção. O caminho para a maestria sempre possui alguma
 Agora, concentrem-se na força e busquem no infinito sobre os conhecimentos que iremos traçar nessa caminhada.
 
 #
-[TOCM]
-[TOC]
-# teste
 
+## Ementa dos treinamentos
+* Dia 01 - Recapitulação de lógica de programação
+    * Tipos de variável (int, bool, Datetime)
+    * Variável do tipo string
+    * Operadores aritiméticos
+    * Operadores relacionais
+    * Operadores lógicos
+    * Estruturas de decisão
+    * Estruturas de repetição
+* Dia 02 - POO e C#
+    * Classes
+    * Atributos
+    * Métodos
+    * Construtures
+    * Sobrecarga
+    * Encapsulamento
+    * Herança
+* Dia 03 - Coleções e LINQ
+    * Arrays
+    * Listas
+    * Dicionários
+    * LINQ
 
+### Projeto: Comunicação no hiperespaço
+Com todo o arcabouço que adquirimos durante esses ultimos dias, vamos produzir um projeto completo, com base de dados, backend e frontend.
+
+* Dia 04 - Acesso a dados
+    * Acesso aos dados
+    * Banco de dados
+    * Entity Framework
+    * Contexto e interfaces
+    * IoC
+* Dia 05 - Serviços
+    * Web Api
+    * RESTFUL verbs
+    * Tratamento de erros
+* Dia 06 - Exibição
+    * Asp Net Core
+    * CSS e HTML
+    * Exibição das mensagens
+    * Chamadas POST / GET
+* Dia 07 - Autenticação
+    * Padrões e JWT
+    * Entidades
+    * Autorização e Autenticação
+    * Refatorando o Backend
+    * Refatorando o Frontend
+* Dia 08 - Async e Wait
+    * Async e programação assíncrona
+    * Refatorando as chamadas
+    * Tratando erros
+    * Refatorando o Backend
+    * Refatorando o Frontend
+* Dia 09 - Topicos avançados
+    * LINQ e performance
+    * Dynamics
+    * Generics
+* Dia 10 - Docker
+    * Dockerfile
+    * Comandos
+    * Rodando um container
+    * Status e gerenciamento
+    * Manutenção

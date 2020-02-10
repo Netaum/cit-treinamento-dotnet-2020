@@ -83,3 +83,9 @@ Somente rebeldes poderão ver ou postar mensagens.
     * Rodando um container
     * Status e gerenciamento
     * Manutenção
+
+# Agenda
+- 21, 24, 26 -> Ronaldo
+- 27, 28, 02 -> Caio
+- 03, 04 -> Gilson
+- 05, 06, 09 -> Netão

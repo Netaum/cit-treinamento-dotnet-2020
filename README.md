@@ -36,6 +36,13 @@ Agora, concentrem-se na força e busquem no infinito sobre os conhecimentos que 
 ### Projeto: Comunicação no hiperespaço
 Com todo o arcabouço que adquirimos durante esses ultimos dias, vamos produzir um projeto completo, com base de dados, backend e frontend.
 
+A comunicação é uma das maiores armas em uma guerra, e conseguir transmitir suas idéias é o ponto chave entre a vitória e a derrota.
+
+Assim, vamos desenvolver um chat de comunicação para a rebelião, onde os membros cadastrados possam "postar" mensagens em um mural. 
+
+Somente rebeldes poderão ver ou postar mensagens.
+
+
 * Dia 04 - Acesso a dados
     * Acesso aos dados
     * Banco de dados
@@ -63,6 +70,9 @@ Com todo o arcabouço que adquirimos durante esses ultimos dias, vamos produzir 
     * Tratando erros
     * Refatorando o Backend
     * Refatorando o Frontend
+
+#### Com isso, concluímos o treinamento básico. Se chegamos até aqui com o tempo proposto, podemos partir para os tópicos mais densos da linguagem. Força guerreiros !
+
 * Dia 09 - Topicos avançados
     * LINQ e performance
     * Dynamics

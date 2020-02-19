@@ -47,8 +47,8 @@ Somente rebeldes poderão ver ou postar mensagens.
     * Acesso aos dados
     * Banco de dados
     * Entity Framework
-    * Contexto e interfaces
-    * IoC
+    * Contexto e Migrations
+    * Selects, Inserts, Deletes e Updates utilizando o EF Core
 * Dia 05 - Serviços
     * Web Api
     * RESTFUL verbs

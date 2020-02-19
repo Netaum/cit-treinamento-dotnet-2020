@@ -71,7 +71,7 @@ Agora que nosso projeto está criado vamos começar a configurar nosso código p
 `dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
 `dotnet add package Microsoft.EntityFrameworkCore.Design`
 
-**[1]** Agora chegamos no momento onde precisamos criar nossas **Models** que representam as tabelas que nosso banco de dados vai conter, para isso vamos criar as entidades em um novo arquivo chamado **Models.cs**
+**[1]** Agora chegamos no momento onde precisamos criar nossos modelos que representam as tabelas do nosso banco de dados, para isso vamos criar as entidades **Mural** e **Post** em um novo arquivo chamado **Models.cs**
 
 **[2]** Em seguida precisamos configurar o contexto do banco de dados. O contexto é a classe onde contêm todas as entidades do banco de dados e também é quem cria a sessão do usuário com o banco para poder obter e alterar os dados.
 

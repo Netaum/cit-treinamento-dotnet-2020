@@ -5,8 +5,8 @@ Tópicos que iremos ver
 * Acesso aos dados
 * Banco de dados
 * Entity Framework
-* Contexto e interfaces
-* IoC
+* Contexto e Migrations
+* Selects, Inserts, Deletes e Updates utilizando o EF Core
 
 # Acesso aos dados
 
@@ -49,7 +49,7 @@ Para podermos brincar com alguns dados no nosso banco de dados vamos ter que cri
 
 Mão na massa!
 
-# Criando um projeto Console do .NET Core
+# Criando um projeto Console do .NET Core e configurando o Entity Framework Core
 
 Para verificar se o ASP.NET Core SDK 3.1 já está instalado na máquina utilize o comando abaixo
 
@@ -69,33 +69,17 @@ Para validar que o projeto está funcionando, vamos executar o comando abaixo
 Agora que nosso projeto está criado vamos começar a configurar nosso código para podermos trabalhar com o Entity Framework Core. Para isso vamos começar instalando as dependências que o .Net Core precisa para utilizar o EF
 
 `dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
-`dotnet  add package Microsoft.EntityFrameworkCore.Design`
+`dotnet add package Microsoft.EntityFrameworkCore.Design`
 
-Agora chegamos no momento onde precisamos criar nossas **Models** que representam as tabelas que nosso banco de dados vai conter, para isso vamos criar um novo arquivo chamado **Models.cs**
+**[1]** Agora chegamos no momento onde precisamos criar nossas **Models** que representam as tabelas que nosso banco de dados vai conter, para isso vamos criar as entidades em um novo arquivo chamado **Models.cs**
 
-Agora vamos criar as entidades conforme o desenho de diagrama do banco
+**[2]** Em seguida precisamos configurar o contexto do banco de dados. O contexto é a classe onde contêm todas as entidades do banco de dados e também é quem cria a sessão do usuário com o banco para poder obter e alterar os dados.
 
-``
+***Dica**: as entidades devem ser configuradas como **DbSet** no Contexto.
 
-Em seguida precisamos configurar o contexto do banco de dados. O contexto é a classe onde contem todas as entidades que nossa aplicação depende relacionado ao banco de dados. O contexto é quem cria a sessão do usuário com o banco para obter os dados.
+**[3]** Agora precisamos sobrescrever o método **OnConfiguring** que é necessário para a configuração da string de conexão do banco para o EF conseguir se conectar no nosso banco de dados.
 
-```
-public class BloggingContext : DbContext
-{
-	DbSet<T> T { get; set; }
-}
-```
-
-Agora precisamos sobrescrever o método necessário de configuração da string de conexão do banco para o EF conseguir se conectar no nosso banco de dados
-
-```
-protected override void OnConfiguring(DbContextOptionsBuilder options) 
-{
-	options.UseSqlServer("Server=localhost;Database=Blogging;User Id=sa;Password=Teste_123456;");
-}
-```
-
-Agora iremos efetuar a configuração para o migrations do EF Core funcionar
+***Dica**: utilizar a string de conexão `Server=localhost;Database=StarWars;User Id=sa;Password=Teste_123456;`
 
 # Migrations
 
@@ -107,7 +91,7 @@ Para o migrations funcionar iremos primeiro instalar a ferramenta do Entity Fram
 
 **Obs**: Caso a instalação apresente o problema de variável de ambiente PATH, precisamos adicionar a pasta `/.dotnet/tools` na variável de ambiente.
 
-Agora iremos executar o comando para criar a nossa primeira versão de migração que irá criar o nosso banco de dados com o nome presente em nossa string de conexão `Blogging` e também criar as tabelas que são referentes as entidades que criamos anteriormente
+Agora iremos executar o comando para criar a nossa primeira versão de migração que irá criar o nosso banco de dados com o nome presente em nossa string de conexão `StarWars` e também criar as tabelas que são referentes as entidades que criamos anteriormente
 
 `dotnet ef migrations add CriacaoInicial`
 
@@ -118,3 +102,21 @@ Agora vamos executar o comando para o EF Core criar o banco de dados e a estrutu
 `dotnet ef database update`
 
 Agora olhando para o nosso cliente do Azure Data Studio podemos ver que o banco de dados foi criado e também todas as tabelas com todos os campos que especificamos em nossas entidades no arquivo **Models.cs**.
+
+Agora podemos começar a brincarmos com registros em nossas novas tabelas.
+
+# Efetuando Selects, Inserts, Deletes e Updates
+
+**[1]** Agora vamos evoluir nosso método `Main` para buscar todos os posts do nosso banco de dados utilizando o **StarWarsContext**.
+
+**[2]** Agora vamos incluir um post com o título **Teste** e conteúdo **Testando inclusão de post**. 
+
+***Dica**: sempre que ocorrer alguma ação de inclusão, atualização ou remoção de registros devemos utilizar o método **SaveChanges()** para persistir essa ação no banco de dados. 
+
+**[3]** Agora vamos melhorar nosso código adicionando uma verificação para não incluir um novo mural com o nome repetido, e caso exista adicione o novo post para o mural já existente.
+
+**[4]** Para termos um controle melhor do nosso mural vamos adicionar a regra de que que devemos remover o post mais antigo para cada nova inclusão se já existir mais que 5 posts no mural.
+
+**[5]** Agora vamos evoluir nosso mural para que tenhamos a informação da última atualização. A atualização deve ocorrer sempre que um novo post seja criado no mural.
+
+**[6]** Refatorar o código

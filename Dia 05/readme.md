@@ -68,8 +68,10 @@ Conforme já aprendemos antes, vamos configurar o EF Core nesse novo projeto par
 
 **[1]** Agora vamos adicionar as entidades seguindo o modelo abaixo
 
+![Modelo de dados](https://github.com/Netaum/cit-treinamento-dotnet-2020/blob/master/Dia%2005/tables.png)
 
 **[2]** Agora vamos configurar o contexto e a string de conexão.
+
 **Dica**: Para configurar a string de conexão em um projeto Web API precisamos adicionar o código abaixo no arquivo **Startup.cs**
 
 ``

@@ -64,9 +64,12 @@ Agora vamos acessar a URL abaixo no browser
 
 **Obs**: Para utilizar o Postman para efetuar as requisições precisamos desativar a verificação de SSL
 
-Agora conforme já aprendemos antes, vamos configurar o EF Core nesse novo projeto para podermos efetuar todo o passo de criar o banco de dados novamente
+Conforme já aprendemos antes, vamos configurar o EF Core nesse novo projeto para podermos efetuar todo o passo de criar o banco de dados novamente para que nossa aplicação tenha as tabelas que vamos precisar.
 
-**[1]** Vamos adicionar as entidades que precisamos para rodar nossa aplicação em seguida vamos configurar o contexto e a string de conexão.
+**[1]** Agora vamos adicionar as entidades seguindo o modelo abaixo
+
+
+**[2]** Agora vamos configurar o contexto e a string de conexão.
 **Dica**: Para configurar a string de conexão em um projeto Web API precisamos adicionar o código abaixo no arquivo **Startup.cs**
 
 ``

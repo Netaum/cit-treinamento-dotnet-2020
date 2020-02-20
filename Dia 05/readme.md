@@ -1,3 +1,4 @@
+
 # Dia 05 - Serviços
 
 Tópicos que iremos ver
@@ -66,13 +67,24 @@ Agora vamos acessar a URL abaixo no browser
 
 Conforme já aprendemos antes, vamos configurar o EF Core nesse novo projeto para podermos efetuar todo o passo de criar o banco de dados novamente para que nossa aplicação tenha as tabelas que vamos precisar.
 
-**[1]** Agora vamos adicionar as entidades seguindo o modelo abaixo
+**[1]** Agora vamos adicionar as entidades seguindo o modelo abaixo. Vamos criar uma nova pasta chamada **Models** na raiz do projeto onde vamos criar todas as entidades em arquivos separados.
 
+![Modelo de dados](https://github.com/Netaum/cit-treinamento-dotnet-2020/blob/master/Dia%2005/tables.png)
 
-**[2]** Agora vamos configurar o contexto e a string de conexão.
-**Dica**: Para configurar a string de conexão em um projeto Web API precisamos adicionar o código abaixo no arquivo **Startup.cs**
+**[2]** Agora vamos criar o contexto dentro de uma nova pasta chamada **Data** na raiz do projeto. 
 
-``
+**[3]** Agora precisamos configurar o contexto com a string de conexão no arquivo **Startup.cs**. É muito importante que a string de conexão fique no arquivo **AppSettings.json** por questões de segurança e padronização.
+
+**[4]** Agora podemos gerar os arquivos de migration e atualizar nosso banco de dados.
+
+**[5]** Agora para seguir uma boa prática de programação vamos criar um repositório na pasta **Data** que irá abstrair todos os métodos relacionados ao banco de dados utilizando o EF que iremos utilizar nos nossos serviços, por exemplo Select(), Add(), Remove(), etc. Precisamos fazer isso para deixarmos separado nosso código de acesso ao banco de dados do resto da aplicação.
+
+Após configurar nossa camada de dados vamos começar a criar os serviços.
 
 # Criando os serviços
 
+Vamos começar removendo todo o código padrão criado pelo projeto, no caso a controller **WeatherForecastController** e também a model **WeatherForecast.cs**
+
+Vamos recapitular sobre os recursos REST e os verbos HTTP ... devemos criar recursos referente as informações de nossa aplicação e utilizar o verbo correto para obter dados, inserir, atualizar e remover. Com esse pensamento vamos criar nossos serviços.
+
+**[1]** Vamos criar um serviço que retorne todos os posts criados no mural. É importante retornar todas as informações sobre o post, o mural e o membro que fez a publicação.

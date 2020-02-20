@@ -27,8 +27,10 @@ Para garantir que o banco de dados está rodando corretamente iremos acessa-lo u
 Para acessar o banco de dados, vamos utilizar as informações abaixo:
 
 Server: **localhost**
-User Name: **sa**
-Password: **Teste_123456**
+
+User Name: **sa** 
+
+Password: **Teste_123456** 
 
 Para testar que tudo está ok, vamos executar os passos abaixo
 
@@ -69,6 +71,7 @@ Para validar que o projeto está funcionando, vamos executar o comando abaixo
 Agora que nosso projeto está criado vamos começar a configurar nosso código para podermos trabalhar com o Entity Framework Core. Para isso vamos começar instalando as dependências que o .Net Core precisa para utilizar o EF
 
 `dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
+
 `dotnet add package Microsoft.EntityFrameworkCore.Design`
 
 **[1]** Agora chegamos no momento onde precisamos criar nossos modelos que representam as tabelas do nosso banco de dados, para isso vamos criar as entidades **Mural** e **Post** em um novo arquivo chamado **Models.cs**

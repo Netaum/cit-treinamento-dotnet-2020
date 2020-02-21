@@ -8,6 +8,7 @@ Tópicos que iremos ver
 * Tratamento de erros usando Middleware
 * Logger
 * Configurando o Swagger
+* CORS
 
 # O que é API
 
@@ -160,6 +161,32 @@ Para nos ajudar com isso vamos utilizar uma ferramenta chamada Swagger. Essa fer
 3. Agora após rodar a aplicação vamos acessar a url abaixo
 
     `https://localhost:5001/swagger`
+
+# CORS
+
+O CORS que refere-se a **Cross-origin resource sharing (compartilhamento de recursos de origem cruzada)** é uma especificação de navegadores que define meios para o servidor permitir que seus recursos sejam acessados por uma página web de um domínio diferente. No nosso caso como estamos rodando a aplicação no ambiente local precisamos falar ao servidor que permitimos que o navegador no endereço localhost pode consumir meus recursos.
+
+**Mão na massa!**
+
+1. Vamos adicionar o código abaixo no arquivo **Startup.cs**
+
+    ```
+    services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAllOrigins", builder =>
+            {
+                builder.AllowAnyOrigin();
+                builder.AllowAnyHeader();
+                builder.AllowAnyMethod();
+            });
+        });
+    ```
+
+    ```
+    app.UseCors("AllowAllOrigins");
+    ```
+
+Com isso falamos para o servidor que todas as requisições de qualquer tipo de origem está permitida.
 
 # Refatorando o código
 

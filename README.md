@@ -50,9 +50,12 @@ Somente rebeldes poderão ver ou postar mensagens.
     * Contexto e Migrations
     * Selects, Inserts, Deletes e Updates utilizando o EF Core
 * Dia 05 - Serviços
-    * Web Api
-    * RESTFUL verbs
-    * Tratamento de erros
+    * Api
+    * Verbos HTTP no REST
+    * Tratamento de erros usando Middleware
+    * Logger
+    * Configurando o Swagger
+    * CORS
 * Dia 06 - Exibição
     * Asp Net Core
     * CSS e HTML

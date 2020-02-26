@@ -190,4 +190,8 @@ Com isso falamos para o servidor que todas as requisições de qualquer tipo de 
 
 # Refatorando o código
 
-1. 
+1. Agora vamos refatorar nosso código para deixar mais organizado nosso projeto. Para isso vamos criar uma pasta **Services** na raiz do projeto e vamos criar uma service para cada recurso.
+
+    ***Ajuda**: Para inserir a injeçao de dependência nesses serviços vamos adicionar o código abaixo no **Startup.cs**.
+
+    `services.AddTransient<PostsService>();`

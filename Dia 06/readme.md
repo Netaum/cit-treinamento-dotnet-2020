@@ -1,7 +1,17 @@
-# Dia 06
 
-# Criando um projeto ASP.NET Core MVC
+# Dia 06 - Exibição
 
-`dotnet new webapp -o web`
+Tópicos que iremos ver
 
-`dotnet run`
+* Angular
+* HTML e CSS
+* Exibição dos murais e das mensagens
+* Chamadas GET e POST
+
+# Angular
+
+# HTML e CSS
+
+# Exibição dos murais e das mensagens
+
+# Chamadas GET e POST
